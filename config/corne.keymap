@@ -44,10 +44,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none   &none   &none   &none   &none   &none    &kp K_REDO    &kp K_PASTE     &kp K_COPY     &kp K_CUT  &kp K_UNDO   &none
-&none   &none   &none   &none   &none   &none      &kp CAPS       &kp LEFT       &kp DOWN  &kp UP_ARROW   &kp RIGHT  &trans
-&none  &trans  &trans  &trans  &trans  &trans    &kp INSERT       &kp HOME  &kp PAGE_DOWN   &kp PAGE_UP     &kp END  &trans
-                        &none  &trans   &none     &kp ENTER  &kp BACKSPACE        &kp DEL
+&none         &none         &none      &none            &none   &none    &kp K_REDO    &kp K_PASTE     &kp K_COPY     &kp K_CUT  &kp K_UNDO   &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp RIGHT_SHIFT   &none      &kp CAPS       &kp LEFT       &kp DOWN  &kp UP_ARROW   &kp RIGHT  &trans
+&none        &trans        &trans     &trans           &trans  &trans    &kp INSERT       &kp HOME  &kp PAGE_DOWN   &kp PAGE_UP     &kp END  &trans
+                                       &none           &trans   &none     &kp ENTER  &kp BACKSPACE        &kp DEL
             >;
         };
 
@@ -78,7 +78,7 @@
         num_layer {
             bindings = <
 &trans  &kp LEFT_BRACKET  &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9   &kp RBKT    &trans      &trans     &trans         &trans         &trans  &trans
-&trans          &kp SEMI  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6   &kp PLUS    &trans  &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+&trans          &kp SEMI  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL    &trans  &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
 &trans         &kp TILDE  &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3   &kp PIPE    &trans      &trans     &trans         &trans         &trans  &trans
                                         &kp GREATER_THAN  &kp NUMBER_0  &kp MINUS    &trans      &trans     &trans
             >;
@@ -87,7 +87,7 @@
         sym_layer {
             bindings = <
 &trans   &kp LBRC    &kp AMPERSAND          &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE    &trans          &trans     &trans         &trans         &trans  &trans
-&trans  &kp COLON       &kp DOLLAR             &kp PRCNT             &kp CARET         &kp PLUS    &trans  &kp LEFT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+&trans  &kp COLON       &kp DOLLAR             &kp PRCNT             &kp CARET        &kp EQUAL    &trans  &kp LEFT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
 &trans  &kp TILDE  &kp EXCLAMATION           &kp AT_SIGN              &kp HASH         &kp PIPE    &trans          &trans     &trans         &trans         &trans  &trans
                                     &kp LEFT_PARENTHESIS              &kp RPAR   &kp UNDERSCORE    &trans          &trans     &trans
             >;
