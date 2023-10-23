@@ -59,10 +59,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q       &kp W       &kp E        &kp R            &kp T                   &kp Y      &kp U        &kp I               &kp O       &kp P               &none
-&none  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F      &kp G                   &kp H      &mt LSHFT J  &mt RCTRL K         &mt RALT L  &mt RGUI SEMICOLON  &none
-&none  &kp Z       &kp X       &kp C        &kp V            &kp B                   &kp N      &kp M        &kp COMMA           &kp DOT     &kp FSLH            &none
-                               &lt 2 ESC    &lt 1 BACKSPACE  &mt TAB LC(LEFT_ALT)    &lt 4 RET  &lt 3 SPACE  &lt 5 SINGLE_QUOTE
+&none  &kp Q       &kp W       &kp E        &kp R            &kp T               &kp Y      &kp U        &kp I               &kp O       &kp P               &none
+&none  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F      &kp G               &kp H      &mt LSHFT J  &mt RCTRL K         &mt RALT L  &mt RGUI SEMICOLON  &none
+&none  &kp Z       &kp X       &kp C        &kp V            &kp B               &kp N      &kp M        &kp COMMA           &kp DOT     &kp FSLH            &none
+                               &lt 2 ESC    &lt 1 BACKSPACE  &mt LC(LALT) TAB    &lt 4 RET  &lt 3 SPACE  &lt 5 SINGLE_QUOTE
             >;
         };
 
