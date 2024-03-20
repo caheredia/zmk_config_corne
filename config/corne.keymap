@@ -85,10 +85,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &none         &none         &none      &none            &none     &kp K_REDO  &kp K_PASTE    &kp K_COPY     &kp K_CUT     &kp K_UNDO  &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp RIGHT_SHIFT  &none     &kp CAPS    &kp LEFT       &kp DOWN       &kp UP_ARROW  &kp RIGHT   &trans
-&none  &trans        &trans        &trans     &trans           &trans    &kp INSERT  &kp HOME       &kp PAGE_DOWN  &kp PAGE_UP   &kp END     &trans
-                                   &none      &trans           &none     &kp ENTER   &kp BACKSPACE  &kp DEL
+&none  &none         &none         &none       &none            &none     &kp K_COPY  &kp K_PASTE    &kp K_COPY     &kp K_CUT     &kp K_PASTE  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL   &kp RIGHT_SHIFT  &none     &kp CAPS    &kp LEFT       &kp DOWN       &kp UP_ARROW  &kp RIGHT    &trans
+&none  &trans        &trans        &kp K_COPY  &kp K_PASTE      &trans    &kp INSERT  &kp HOME       &kp PAGE_DOWN  &kp PAGE_UP   &kp END      &trans
+                                   &none       &trans           &none     &kp ENTER   &kp BACKSPACE  &kp DEL
             >;
         };
 
