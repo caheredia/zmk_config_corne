@@ -17,6 +17,16 @@
             key-positions = <25 34>;
             layers = <0>;
         };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <7 19>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <31 19>;
+        };
     };
 
     behaviors {
