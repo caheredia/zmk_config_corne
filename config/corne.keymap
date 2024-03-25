@@ -27,6 +27,16 @@
             bindings = <&kp MINUS>;
             key-positions = <31 19>;
         };
+
+        copy {
+            bindings = <&kp RG(C)>;
+            key-positions = <22 27>;
+        };
+
+        paste {
+            bindings = <&kp RG(V)>;
+            key-positions = <22 28>;
+        };
     };
 
     behaviors {
