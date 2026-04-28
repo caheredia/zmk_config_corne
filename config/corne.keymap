@@ -49,15 +49,14 @@
         Copy: Copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(C)>, <&macro_press>, <&kp>;
-
+            bindings = <&kp LG(C)>;
             label = "COPY";
         };
 
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(V)>;
+            bindings = <&kp LG(V)>;
             label = "PASTE";
         };
     };
