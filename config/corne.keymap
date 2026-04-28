@@ -16,6 +16,14 @@
     combos { compatible = "zmk,combos"; };
 
     behaviors {
+        td_q: td_q {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Q";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&kp ESC>;
+        };
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -66,7 +74,7 @@
 
         base_layer {
             bindings = <
-&kp Q    &kp W  &kp E  &kp R      &lt 2 T  &kp Y                    &kp U         &kp I          &kp O                   &kp P                  &hml LEFT_CONTROL A  &kp S
+&td_q    &kp W  &kp E  &kp R      &lt 2 T  &kp Y                    &kp U         &kp I          &kp O                   &kp P                  &hml LEFT_CONTROL A  &kp S
 &kp D    &kp F  &kp G  &kp H      &kp J    &kp K                    &kp L         &kp SEMICOLON  &hml LEFT_SHIFT Z       &kp X                  &kp C                &kp V
 &lt 1 B  &kp N  &kp M  &kp COMMA  &kp DOT  &hmr RIGHT_SHIFT FSLH    &kp LEFT_GUI  &kp BACKSPACE  &mt LC(LEFT_SHIFT) TAB  &mt RS(RIGHT_GUI) RET  &lt 3 SPACE          &kp SQT
             >;
