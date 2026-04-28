@@ -92,7 +92,7 @@
             bindings = <
 &kp GRAVE           &mt AMPS NUMBER_7   &mt ASTERISK NUMBER_8  &mt LPAR NUMBER_9  &mt RPAR N0  &trans       &trans         &trans         &trans     &trans             &kp LEFT_BRACKET  &mt DLLR NUMBER_4
 &mt PRCNT NUMBER_5  &mt CARET NUMBER_6  &kp RIGHT_BRACKET      &trans             &kp RSHIFT   &kp RCTRL    &kp RIGHT_ALT  &kp RIGHT_GUI  &kp TILDE  &mt EXCL NUMBER_1  &mt AT NUMBER_2   &mt HASH NUMBER_3
-&kp PIPE            &trans              &trans                 &trans             &trans       &trans       &kp SLASH      &kp MINUS      &kp PLUS   &trans             &trans            &trans
+&kp BACKSLASH       &trans              &trans                 &trans             &trans       &trans       &kp SLASH      &kp MINUS      &kp PLUS   &trans             &trans            &trans
             >;
         };
 
