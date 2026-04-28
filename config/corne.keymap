@@ -107,10 +107,10 @@
 
         num_layer {
             bindings = <
-&kp LEFT_BRACKET  &kp NUMBER_7       &kp NUMBER_8      &kp NUMBER_9              &kp RBKT     &trans  &trans      &trans     &trans         &trans
-&kp SEMI          &kp NUMBER_4       &kp NUMBER_5      &kp NUMBER_6              &kp EQUAL    &trans  &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
-&kp TILDE         &mt EXCL NUMBER_1  &kp NUMBER_2      &kp NUMBER_3              &kp PIPE     &trans  &trans      &trans     &trans         &trans
-                                     &kp GREATER_THAN  &mt RIGHT_PARENTHESIS N0  &kp MINUS    &trans  &trans      &trans
+&kp LEFT_BRACKET  &mt AMPS NUMBER_7  &mt AST NUMBER_8  &mt LPAR NUMBER_9         &kp RBKT     &trans  &trans      &trans     &trans         &trans
+&kp SEMI          &mt DLLR NUMBER_4  &mt PRCNT NUMBER_5  &mt CARET NUMBER_6       &kp EQUAL    &trans  &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp TILDE         &mt EXCL NUMBER_1  &mt AT NUMBER_2    &mt HASH NUMBER_3         &kp PIPE     &trans  &trans      &trans     &trans         &trans
+                                     &kp GREATER_THAN  &mt RPAR N0              &kp MINUS    &trans  &trans      &trans
             >;
         };
 
