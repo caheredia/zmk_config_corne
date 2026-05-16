@@ -20,6 +20,16 @@
             bindings = <&kp RG(RA(C))>;
             key-positions = <22 34 35>;
         };
+
+        copy {
+            bindings = <&kp RG(C)>;
+            key-positions = <22 33>;
+        };
+
+        paste {
+            bindings = <&kp RG(V)>;
+            key-positions = <23 33>;
+        };
     };
 
     behaviors {
