@@ -17,7 +17,7 @@
         compatible = "zmk,combos";
 
         Clipboard {
-            bindings = <&kp RG(RA(C))>;
+            bindings = <&kp RA(C)>;
             key-positions = <22 35>;
         };
 
