@@ -16,11 +16,6 @@
     combos {
         compatible = "zmk,combos";
 
-        Clipboard {
-            bindings = <&kp RA(C)>;
-            key-positions = <22 35>;
-        };
-
         copy {
             bindings = <&kp RG(C)>;
             key-positions = <22 34>;
