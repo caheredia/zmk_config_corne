@@ -12,6 +12,7 @@ ZMK keyboard firmware **configuration only** for a Corne split keyboard (nice_na
 | `config/corne.conf` | Kconfig settings (deep sleep, keyboard name; RGB/display commented out) |
 | `config/west.yml` | West manifest pinned to `zmkfirmware/zmk@main` |
 | `build.yaml` | CI build matrix: left + right halves, each with nice_view |
+| `docs/keymap-decisions.md` | Design decision log for `config/corne.keymap` (the *why* behind the layout) |
 | `moergo.keymap` | **Auto-generated** by the GO_60 Layout Editor for a different board (GO_60 with Cirque trackpad). Do not hand-edit — regenerate via the editor. |
 
 ## Building / flashing
@@ -28,7 +29,7 @@ Files use **ZMK Device Tree syntax** (`.keymap` / `.conf`):
 
 ## Two keymaps — don't confuse them
 
-- `config/corne.keymap` targets a **5-column Corne** (`five_column_transform`). Key positions 0–29 for the 3×5+3 layout.
+- `config/corne.keymap` targets a **5-column Corne** (`five_column_transform`). Key positions 0–35 for the 3×5+3 layout (0–29 alphas, 30–35 thumbs).
 - `moergo.keymap` targets the **GO_60** (6-column, 4-row + thumb cluster, 60 total positions). It has `cirque_rh_listener` / `cirque_lh_listener` for a Cirque trackpad and a Factory test layer. The `#pragma once` and helper macros at the top are intentional ZMK idioms from urob/zmk-helpers.
 
 ## Active layers in `config/corne.keymap`
@@ -36,24 +37,29 @@ Files use **ZMK Device Tree syntax** (`.keymap` / `.conf`):
 | Index | Name | Activated by |
 |-------|------|-------------|
 | 0 | base | default |
-| 1 | nav | `lt 1 BACKSPACE` (left thumb) |
-| 2 | media | `lt 2 ESC` (left thumb) |
-| 3 | num | `lt 3 SPACE` (right thumb) |
-| 4 | sym | `lt 4 RET` (right thumb) |
-| 5 | fun | `lt 5 '` (right thumb) |
-| 6 | (empty) | unused |
+| 1 | num | `&lt 1` on the **left-inner** thumb (tap = `TAB`) |
+| 2 | nav | `&lt 2` on the **left-outer** thumb (tap = `'`) |
 
-Home-row mods: `hml` on left hand (LGUI/LALT/LCTRL/LSHFT on ASDF), `hmr` on right hand (LSHFT/RCTRL/RALT/RGUI on JKL;). Both use `balanced` flavor, 200 ms tapping term, `require-prior-idle-ms = <150>`.
+Thumb cluster (base layer), by comfort (outer > mid/home > inner):
+- **Left:** `NAV/'` (outer) · `&sk LSHFT` one-shot Shift (mid) · `NUM/TAB` (inner)
+- **Right:** `&mt LGUI RET` ⌘/Enter (inner) · `SPACE` (mid) · `BSPC` (outer)
+
+The design mirrors a MacBook: **Ctrl is the only home-row mod** (`&hml LCTRL A`,
+mirroring Caps→Ctrl), ⌘ is on a thumb for native combos, and there is **no symbol
+layer** — symbols come from `Shift`+key in their native macOS positions (hold NUM,
+fat-finger the adjacent one-shot Shift, tap a number). The `num` layer holds a numpad
+(7-8-9 / 4-5-6 / 1-2-3 / 0) plus F-keys on the left hand; `nav` holds arrows +
+editing on the right hand and media/Bluetooth on the left. See
+`docs/keymap-decisions.md` for the full rationale.
+
+Only the `hml` (left home-row mod) behavior is defined; `hmr` was removed. `hml` uses
+`balanced` flavor, 200 ms tapping term, `require-prior-idle-ms = <150>`.
 
 ## Combos in `config/corne.keymap`
 
 | Combo | Positions | Output |
 |-------|-----------|--------|
-| caps_word | 20+28 | `&caps_word` (layer 0 only) |
-| plus | 5+15 | `PLUS` |
-| minus | 25+15 | `MINUS` |
-| copy | 18+22 | `RG(C)` |
-| paste | 18+23 | `RG(V)` |
+| caps_word | 14+15 (G + H) | `&caps_word` (base layer only) |
 
 ## Editing the keymap via UI
 

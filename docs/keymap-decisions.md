@@ -167,15 +167,19 @@ Thumb rationale (comfort: outer > mid/homing > inner — see D8):
 - **BSPC** (right outer, most comfy) — pure key, frequent + holds to repeat (D8).
 - Home row keeps `&hml LEFT_CONTROL A` for Ctrl (mirrors MacBook Caps→Ctrl, D5a).
 
-### Layer 1 — NUM  (hold left NUM/TAB; numbers on the RIGHT hand)
+### Layer 1 — NUM  (hold left NUM/TAB; numpad on the RIGHT hand)
 ```
- F1   F2   F3   F4   F5       1    2    3    4    5
- F6   F7   F8   F9   F10      6    7    8    9    0
- F11  F12  \    ─    ─        `    -    =    [    ]
+ F1   F2   F3   F4   F5       [    7    8    9    -
+ F6   F7   F8   F9   F10      ]    4    5    6    =
+ F11  F12  \    ─    ─        \    1    2    3    ENTER
+                              (right thumbs: SPACE→. (DOT)   BSPC→0)
 ```
-Numbers in number-row order; **Shift+number → `! @ # $ % ^ & * ( )`** (Mac-native).
-Bottom-right symbol keys give `~ _ + { }` under Shift; `\` sits on the free left hand
-(`Shift+\` → `|`). F-keys on the left, F-row above the numbers like a Mac (D2/D3).
+**Updated post-build via the keymap editor** (commit "move delete to num layer"):
+the right hand is now a **numpad** (7-8-9 / 4-5-6 / 1-2-3, `0` and `.` on the right
+thumbs, numpad `Enter`), with brackets `[ ]` and `- =` down the inner column and
+`\` on the left. Numbers are the regular `N1`–`N0` keycodes, so **Shift still yields
+the macOS symbols** (`Shift+7`=`&`, `Shift+[`=`{`, …, D2) — only the *spatial*
+arrangement changed from a number row to a numpad. F-keys remain on the left hand.
 
 ### Layer 2 — NAV  (hold left TAB/NAV; arrows on the RIGHT hand)
 ```
@@ -199,6 +203,6 @@ Bluetooth fill the free left hand, so no separate media layer (D4/D7).
 - [x] Keep `td_q` (tap Q / Esc) for now.
 - [x] Drop the `copy`/`paste` combos — ⌘ is on the right thumb, so `⌘C/⌘V` are native.
 - [ ] Confirm `&mt LGUI RET` flavor/timing so the Enter tap doesn't misfire as ⌘.
-- [ ] Update `build.yaml`/`AGENTS.md` layer table after the rewrite (AGENTS.md is
-      already out of sync with the live keymap).
+- [x] Update `AGENTS.md` layer/combo tables to match the implemented keymap.
+- [x] NUM layer re-tuned to a numpad via the keymap editor (see Layer 1 above).
 ```
