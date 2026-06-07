@@ -37,12 +37,12 @@ Files use **ZMK Device Tree syntax** (`.keymap` / `.conf`):
 | Index | Name | Activated by |
 |-------|------|-------------|
 | 0 | base | default |
-| 1 | num | `&lt 1` on the **left-inner** thumb (tap = `TAB`) |
+| 1 | num | `&lt 1` on the **left-mid** thumb (tap = `TAB`) |
 | 2 | nav | `&lt 2` on the **left-outer** thumb (tap = `'`) |
 
-Thumb cluster (base layer), by comfort (outer > mid/home > inner):
-- **Left:** `NAV/'` (outer) · `&sk LSHFT` one-shot Shift (mid) · `NUM/TAB` (inner)
-- **Right:** `&mt LGUI RET` ⌘/Enter (inner) · `SPACE` (mid) · `BSPC` (outer)
+Thumb cluster (base layer) — the big inner keys carry the most-used actions (⇧, Space):
+- **Left:** `NAV/'` (outer) · `NUM/TAB` (mid) · `&sk LSHFT` one-shot Shift (inner, BIG)
+- **Right:** `SPACE` (inner, BIG) · `&mt LGUI RET` ⌘/Enter (mid) · `BSPC` (outer)
 
 The design mirrors a MacBook: **Ctrl is the only home-row mod** (`&hml LCTRL A`,
 mirroring Caps→Ctrl), ⌘ is on a thumb for native combos, and there is **no symbol

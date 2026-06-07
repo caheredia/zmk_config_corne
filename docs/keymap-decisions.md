@@ -118,6 +118,19 @@ go on the **least-comfy inner** thumbs — comfort barely matters when you only 
   tap, adjacent to NUM for the fat-finger symbol trick. *Caveat:* if resting causes
   stray capitals, add `require-prior-idle-ms` to the `&sk`.
 
+### ✅ D9 — Most-used thumb actions (⇧ + Space) moved to the big inner keys
+**Revises D8's placement.** The Corne's two inner thumb keys are physically the
+largest (`h:1.5`) and, with the thumb resting, the easiest to hit — not the
+least-comfy as D8 assumed. So the highest-frequency thumb actions go there:
+- **Space → right big key.** Space is ~18% of all keystrokes; Tab (the old occupant's
+  tap) is <1%. No contest.
+- **Shift → left big key.** For a Python dev, Shift fires for caps *and* a huge share
+  of symbols (`:` from `Shift+;`, `"`, `_`, `(` `)`, `{` `}`), far out-firing the
+  left key's solo job (the Tab tap, which editors often auto-handle).
+- NUM/TAB and RET/CMD shift outward to the mid keys (both are *holds*, which don't
+  need the big cap). NUM stays adjacent to Shift, so the NUM+⇧ symbol fat-finger
+  (D1/D2) is preserved.
+
 ### ✅ D7 — Layer set collapses to three (base / num / nav)
 With symbols handled by Shift (D2) and media folded into NAV's free left hand, the
 layout drops from 7 layers to **3**:
@@ -125,8 +138,8 @@ layout drops from 7 layers to **3**:
 | Idx | Layer | Held by | Typed with |
 |---|---|---|---|
 | 0 | base | — | both |
-| 1 | num  | left-mid thumb (NUM/BSPC) | right hand (numbers); left hand = F-keys |
-| 2 | nav  | left-outer thumb (NAV/TAB) | right hand (arrows); left hand = media/BT |
+| 1 | num  | left-mid thumb (NUM/TAB) | right hand (numbers); left hand = F-keys |
+| 2 | nav  | left-outer thumb (NAV/') | right hand (arrows); left hand = media/BT |
 
 Both held layers are on **left** thumbs → numbers and arrows on the **right** hand
 (arrows in the conventional right-hand position). The SYM and MEDIA layers are gone.
@@ -149,22 +162,22 @@ Legend: `XXX/YYY` on a thumb = `tap XXX` / `hold YYY`. Alphas unchanged (QWERTY)
  A    S    D    F    G        H    J    K    L    ;
  Z    X    C    V    B        N    M    ,    .    /
         ┌───────┬──────────┬─────────┐   ┌─────────┬───────┬──────┐
-        │ NAV/' │ ⇧ oneshot│ NUM/TAB │   │ RET/CMD │ SPACE │ BSPC │
-        └───────┴──────────┴─────────┘   └─────────┴───────┴──────┘
-        outer    mid(home)   inner       inner    mid(home) outer
+        │ NAV/' │ NUM/TAB │ ⇧ oneshot│   │ SPACE │ RET/CMD │ BSPC │
+        └───────┴─────────┴──────────┘   └───────┴─────────┴──────┘
+        outer    mid       inner-BIG     inner-BIG  mid     outer
    (* Q = td_q: tap Q / hold Esc)
 ```
-Thumb rationale (comfort: outer > mid/homing > inner — see D8):
-- **NAV/'** (left outer, most comfy) — hold = Nav (arrows on the RIGHT hand); tap =
-  `'` (frequent Python char gets the best thumb). `"` = Shift+'.
-- **⇧ one-shot** (left mid, homing) — most-frequent left tap; adjacent to NUM so
-  NUM+⇧ fat-finger → symbols (D1/D2).
-- **NUM/TAB** (left inner, least comfy) — hold = Num (numbers on the RIGHT hand); a
-  hold belongs on the worst thumb; tap = Tab (infrequent).
-- **RET/CMD** (right inner, least comfy) — hold = ⌘ (a hold, so worst thumb is fine;
-  `⌘C/⌘V/⌘D` opposite-handed); tap = Enter (D5).
-- **SPACE** (right mid, homing) — pure key, rests under the thumb (D4).
-- **BSPC** (right outer, most comfy) — pure key, frequent + holds to repeat (D8).
+Thumb rationale (see D8 → revised by D9 — big inner keys carry the most-used actions):
+- **NAV/'** (left outer) — hold = Nav (arrows on the RIGHT hand); tap = `'`
+  (frequent Python char). `"` = Shift+'.
+- **NUM/TAB** (left mid) — hold = Num (numbers on the RIGHT hand); tap = Tab
+  (infrequent). Adjacent to ⇧ so NUM+⇧ fat-finger → symbols (D1/D2).
+- **⇧ one-shot** (left inner, BIG) — the most-used left action: caps *and* Python
+  symbols (`:` `"` `_` `(` `)` `{` `}`), so it earns the big key (D9).
+- **SPACE** (right inner, BIG) — the single most-pressed key, so it earns the big
+  key (D9). Pure key (not a layer-tap).
+- **RET/CMD** (right mid) — hold = ⌘ (`⌘C/⌘V/⌘D` opposite-handed); tap = Enter (D5).
+- **BSPC** (right outer) — pure key, frequent + holds to repeat (D8).
 - Home row keeps `&hml LEFT_CONTROL A` for Ctrl (mirrors MacBook Caps→Ctrl, D5a).
 
 ### Layer 1 — NUM  (hold left NUM/TAB; numpad on the RIGHT hand)
@@ -172,7 +185,7 @@ Thumb rationale (comfort: outer > mid/homing > inner — see D8):
  `    F2   F3   F4   F5       [    7    8    9    -
  F6   F7   F8   F9   F10      ]    4    5    6    =
  F11  F12  \    ─    ─        \    1    2    3    ENTER
-                              (right thumbs: SPACE→. (DOT)   BSPC→0)
+                              (right thumbs: big SPACE key→. (DOT)  RET/CMD key→0)
 ```
 **Updated post-build via the keymap editor** (commit "move delete to num layer"):
 the right hand is now a **numpad** (7-8-9 / 4-5-6 / 1-2-3, `0` and `.` on the right
