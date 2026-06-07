@@ -2,7 +2,7 @@
 
 ## What this repo is
 
-ZMK keyboard firmware **configuration only** for a Corne split keyboard (nice_nano v1, nice_view display). No build tooling, no scripts, no tests — all compilation happens in CI via GitHub Actions.
+ZMK keyboard firmware **configuration only** for a Corne split keyboard (nice_nano v2, nice_view display). No build tooling, no scripts, no tests — all compilation happens in CI via GitHub Actions.
 
 ## File map
 
