@@ -169,7 +169,7 @@ Thumb rationale (comfort: outer > mid/homing > inner — see D8):
 
 ### Layer 1 — NUM  (hold left NUM/TAB; numpad on the RIGHT hand)
 ```
- F1   F2   F3   F4   F5       [    7    8    9    -
+ `    F2   F3   F4   F5       [    7    8    9    -
  F6   F7   F8   F9   F10      ]    4    5    6    =
  F11  F12  \    ─    ─        \    1    2    3    ENTER
                               (right thumbs: SPACE→. (DOT)   BSPC→0)
@@ -179,7 +179,9 @@ the right hand is now a **numpad** (7-8-9 / 4-5-6 / 1-2-3, `0` and `.` on the ri
 thumbs, numpad `Enter`), with brackets `[ ]` and `- =` down the inner column and
 `\` on the left. Numbers are the regular `N1`–`N0` keycodes, so **Shift still yields
 the macOS symbols** (`Shift+7`=`&`, `Shift+[`=`{`, …, D2) — only the *spatial*
-arrangement changed from a number row to a numpad. F-keys remain on the left hand.
+arrangement changed from a number row to a numpad. F-keys remain on the left hand
+(F1 dropped — the top-left key is now `` ` `` (backtick), mirroring its Mac position
+left of `1`; with the one-shot Shift it yields `~`).
 
 ### Layer 2 — NAV  (hold left TAB/NAV; arrows on the RIGHT hand)
 ```
