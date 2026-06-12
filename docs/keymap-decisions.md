@@ -42,6 +42,11 @@ number-row positions (shift+1=`!`, shift+2=`@`, …). The real pain was the
 
 ## Decisions
 
+> **Inner/outer convention (corrected — see D10).** "inner" = the small thumb key
+> *nearest the alpha block*; "outer" = the big `h:1.5` key that *juts out farthest*
+> from the alphas. Earlier entries (D8, D9) were written with the opposite labels —
+> they call the big keys "inner." Read those entries with the labels inverted.
+
 ### ✅ D1 — Dedicated Shift = true one-shot (`&sk LSHFT`)
 Anymak-style. **Pure modifier, no layer involved:**
 - **Tap** → arms Shift for exactly the *next* keypress, then auto-disarms. Tap, then
@@ -131,6 +136,55 @@ least-comfy as D8 assumed. So the highest-frequency thumb actions go there:
   need the big cap). NUM stays adjacent to Shift, so the NUM+⇧ symbol fat-finger
   (D1/D2) is preserved.
 
+### ✅ D10 — Enter moved to the inner right thumb; Backspace to the middle
+**Problem:** Enter (`&mt LGUI RET`) sat on the **middle** right thumb — the homing /
+resting position — so a resting/overshooting thumb kept tapping it, sending chat
+messages mid-sentence. **Fix:** swap the middle and inner right thumb bindings.
+
+| Right thumb | Before | After |
+|---|---|---|
+| outer (big `h:1.5`, juts out) | `&kp SPACE` | `&kp SPACE` (unchanged) |
+| middle (homing/resting) | `&mt LGUI RET` | `&kp BSPC` |
+| inner (nearest alphas, least comfy) | `&kp BSPC` | `&mt LGUI RET` |
+
+Rationale: Enter now lives on the least-comfy **inner** key (least likely to be
+brushed), so stray taps stop sending messages. ⌘ rides along (it's the hold half of
+`&mt LGUI RET`, and holds belong on the less-comfy key anyway, D8). Backspace takes
+the middle resting key — a stray backspace is far less costly than a stray send, and
+it's frequent + holds-to-repeat so the comfy resting spot suits it.
+
+This also fixed the inner/outer terminology: D8/D9 had labeled the big keys "inner";
+they are now correctly "outer" (see the convention note atop this section).
+
+### ✅ D11 — Spotlight remapped to ⌃Space (macOS-side, no keymap change)
+**Problem:** macOS Spotlight defaults to **⌘Space**, but on this board ⌘ (hold of the
+inner right thumb, D10) and Space (outer right thumb) are on the **same thumb** — the
+chord is awkward. Moving keys around the right thumb can't fix it (⌘ and Space stay
+co-located on one thumb).
+
+**Rejected:** rebinding Spotlight to a bare two-modifier chord like **⇧⌘** (⇧ = left
+thumb, ⌘ = right thumb). Two reasons: macOS won't accept a *modifier-only* shortcut
+(the picker needs a regular key), and ⇧⌘ is a heavily-used prefix (⇧⌘3/4/5 screenshots,
+⇧⌘Z redo, ⇧⌘N, ⇧⌘. …) so a modifier-only trigger would misfire. Same collision
+applies to a ZMK combo on the two thumbs emitting `LG(SPACE)`.
+
+**Decision:** leave the keymap alone and remap macOS Spotlight to **⌃Space**
+(Control+Space). On this board Ctrl is the home-row mod on `A` (left hand, D5a) and
+Space is the right thumb → a clean **opposite-hand** chord, and (unlike ⇧⌘) it
+includes a regular key so macOS accepts it. One cleanup: free ⌃Space from System
+Settings → Keyboard → Keyboard Shortcuts → Input Sources → "Select the previous
+input source," which owns ⌃Space by default.
+
+**Extension (clipboard history):** following the same family, clipboard-history is
+mapped to **⌃⇧Space** — i.e. the Spotlight chord plus the left-thumb Shift. Keys:
+Ctrl (`A` home-row, left pinky) + ⇧ (left thumb) + Space (right thumb) — three
+distinct fingers across both hands, no collision; ⌃⇧Space is not a stock macOS
+shortcut. Bound via **skhd** in the `dotfiles` repo (`services.skhd` in
+`modules/darwin/default.nix`), which runs an AppleScript that opens Spotlight
+(⌃Space) → Clipboard tab (⌘4). See `dotfiles/docs/macos-clipboard-hotkey.md`. No
+keymap change here. *(Side effect: that AppleScript had to switch its Spotlight
+keystroke from ⌘Space to ⌃Space to match the D11 remap.)*
+
 ### ✅ D7 — Layer set collapses to three (base / num / nav)
 With symbols handled by Shift (D2) and media folded into NAV's free left hand, the
 layout drops from 7 layers to **3**:
@@ -161,23 +215,25 @@ Legend: `XXX/YYY` on a thumb = `tap XXX` / `hold YYY`. Alphas unchanged (QWERTY)
  Q*   W    E    R    T        Y    U    I    O    P
  A    S    D    F    G        H    J    K    L    ;
  Z    X    C    V    B        N    M    ,    .    /
-        ┌───────┬──────────┬─────────┐   ┌─────────┬───────┬──────┐
-        │ NAV/' │ NUM/TAB │ ⇧ oneshot│   │ SPACE │ RET/CMD │ BSPC │
-        └───────┴─────────┴──────────┘   └───────┴─────────┴──────┘
-        outer    mid       inner-BIG     inner-BIG  mid     outer
+        ┌───────┬─────────┬──────────┐   ┌──────────┬──────┬─────────┐
+        │ NAV/' │ NUM/TAB │ ⇧ oneshot│   │  SPACE   │ BSPC │ RET/CMD │
+        └───────┴─────────┴──────────┘   └──────────┴──────┴─────────┘
+        inner    mid       outer-BIG     outer-BIG   mid    inner
    (* Q = td_q: tap Q / hold Esc)
 ```
-Thumb rationale (see D8 → revised by D9 — big inner keys carry the most-used actions):
-- **NAV/'** (left outer) — hold = Nav (arrows on the RIGHT hand); tap = `'`
+Thumb rationale (see D8/D9; inner/outer per the corrected convention + D10):
+- **NAV/'** (left inner) — hold = Nav (arrows on the RIGHT hand); tap = `'`
   (frequent Python char). `"` = Shift+'.
 - **NUM/TAB** (left mid) — hold = Num (numbers on the RIGHT hand); tap = Tab
   (infrequent). Adjacent to ⇧ so NUM+⇧ fat-finger → symbols (D1/D2).
-- **⇧ one-shot** (left inner, BIG) — the most-used left action: caps *and* Python
+- **⇧ one-shot** (left outer, BIG) — the most-used left action: caps *and* Python
   symbols (`:` `"` `_` `(` `)` `{` `}`), so it earns the big key (D9).
-- **SPACE** (right inner, BIG) — the single most-pressed key, so it earns the big
+- **SPACE** (right outer, BIG) — the single most-pressed key, so it earns the big
   key (D9). Pure key (not a layer-tap).
-- **RET/CMD** (right mid) — hold = ⌘ (`⌘C/⌘V/⌘D` opposite-handed); tap = Enter (D5).
-- **BSPC** (right outer) — pure key, frequent + holds to repeat (D8).
+- **BSPC** (right mid) — pure key, frequent + holds to repeat; on the homing key
+  since a stray backspace is harmless next to a stray send (D8/D10).
+- **RET/CMD** (right inner) — hold = ⌘ (`⌘C/⌘V/⌘D` opposite-handed); tap = Enter.
+  On the least-comfy inner key so it isn't brushed into accidental sends (D5/D10).
 - Home row keeps `&hml LEFT_CONTROL A` for Ctrl (mirrors MacBook Caps→Ctrl, D5a).
 
 ### Layer 1 — NUM  (hold left NUM/TAB; numpad on the RIGHT hand)

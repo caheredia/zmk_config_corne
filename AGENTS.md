@@ -40,9 +40,15 @@ Files use **ZMK Device Tree syntax** (`.keymap` / `.conf`):
 | 1 | num | `&lt 1` on the **left-mid** thumb (tap = `TAB`) |
 | 2 | nav | `&lt 2` on the **left-outer** thumb (tap = `'`) |
 
-Thumb cluster (base layer) — the big inner keys carry the most-used actions (⇧, Space):
-- **Left:** `NAV/'` (outer) · `NUM/TAB` (mid) · `&sk LSHFT` one-shot Shift (inner, BIG)
-- **Right:** `SPACE` (inner, BIG) · `&mt LGUI RET` ⌘/Enter (mid) · `BSPC` (outer)
+Thumb cluster (base layer). **Inner/outer convention:** "inner" = the small key
+nearest the alpha block; "outer" = the big `h:1.5` key that juts out farthest from
+the alphas. The big **outer** keys carry the most-used actions (⇧, Space):
+- **Left:** `&sk LSHFT` one-shot Shift (outer, BIG) · `NUM/TAB` (mid) · `NAV/'` (inner)
+- **Right:** `SPACE` (outer, BIG) · `BSPC` (mid) · `&mt LGUI RET` ⌘/Enter (inner)
+
+Enter (`&mt LGUI RET`, tap = Enter / hold = ⌘) lives on the **inner** right thumb —
+the least-comfy, least-brushed key — to stop accidental sends mid-sentence; `BSPC`
+took the middle resting key (a stray backspace is harmless next to a stray send).
 
 The design mirrors a MacBook: **Ctrl is the only home-row mod** (`&hml LCTRL A`,
 mirroring Caps→Ctrl), ⌘ is on a thumb for native combos, and there is **no symbol

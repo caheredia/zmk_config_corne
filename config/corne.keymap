@@ -7,9 +7,14 @@
  *
  * Layers: 0 base, 1 num, 2 nav.
  *
- * Thumbs (big inner keys hold the most-used actions: ⇧ and Space):
- *   left:  NAV/'  |  NUM/TAB  |  ⇧ one-shot      (outer | mid | inner-BIG)
- *   right: SPACE  |  RET/CMD  |  BSPC            (inner-BIG | mid | outer)
+ * Thumbs. Convention: "inner" = the small key nearest the alpha block;
+ * "outer" = the big h:1.5 key that juts out farthest from the alphas. The big
+ * OUTER keys hold the most-used actions (⇧ and Space):
+ *   left:  NAV/'  |  NUM/TAB  |  ⇧ one-shot   (inner | mid | outer-BIG)
+ *   right: SPACE  |  BSPC     |  RET/CMD      (outer-BIG | mid | inner)
+ *
+ * Enter (RET/CMD) sits on the inner right thumb (least-comfy, least-brushed) so
+ * a stray thumb no longer sends a message; Backspace took the middle resting key.
  *
  * Symbols: no symbol layer. Hold NUM (left mid) + fat-finger ⇧ (left inner),
  * then tap a number on the right hand -> Shift+number = the macOS symbol.
@@ -76,7 +81,7 @@
             bindings = <
 &td_q  &kp W  &kp E  &kp R      &kp T    &kp Y       &kp U        &kp I          &kp O        &kp P         &hml LCTRL A  &kp S
 &kp D  &kp F  &kp G  &kp H      &kp J    &kp K       &kp L        &kp SEMICOLON  &kp Z        &kp X         &kp C         &kp V
-&kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH    &lt NAV SQT  &lt NUM TAB  &sk LSHFT  &kp SPACE  &mt LGUI RET  &kp BSPC
+&kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH    &lt NAV SQT  &lt NUM TAB  &sk LSHFT  &kp SPACE  &kp BSPC  &mt LGUI RET
             >;
         };
 
