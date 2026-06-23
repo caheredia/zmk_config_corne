@@ -8,15 +8,19 @@
  * Layers: 0 base, 1 num, 2 nav.
  *
  * Thumbs. Convention: "inner" = the small key nearest the alpha block;
- * "outer" = the big h:1.5 key that juts out farthest from the alphas. The big
- * OUTER keys hold the most-used actions (⇧ and Space):
- *   left:  NAV/'  |  NUM/TAB  |  ⇧ one-shot   (inner | mid | outer-BIG)
- *   right: SPACE  |  BSPC     |  RET/CMD      (outer-BIG | mid | inner)
+ * "outer" = the big h:1.5 key that juts out farthest from the alphas.
+ *   left:  BSPC/NAV    |  ⇧ one-shot  |  TAB/NUM   (inner | mid | outer-BIG)
+ *   right: '           |  SPACE       |  RET/CMD   (inner | mid | outer-BIG)
  *
- * Enter (RET/CMD) sits on the inner right thumb (least-comfy, least-brushed) so
- * a stray thumb no longer sends a message; Backspace took the middle resting key.
+ * NAV rides on the left-inner Backspace (its arrows are on the right hand, so it
+ * must be held by a left thumb). Trade-off: holding Backspace fires NAV instead
+ * of auto-repeat-delete. ' moves to the right-inner thumb to match macOS QWERTY.
  *
- * Symbols: no symbol layer. Hold NUM (left mid) + fat-finger ⇧ (left inner),
+ * TAB sits on the big left thumb (NUM on hold) so a stray hit on the middle key
+ * only fires a one-shot Shift, which is harmless. CMD/Enter moved to the big
+ * right thumb so the thumb no longer has to reach under the hand for ⌘.
+ *
+ * Symbols: no symbol layer. Hold NUM (left outer) + fat-finger ⇧ (left mid),
  * then tap a number on the right hand -> Shift+number = the macOS symbol.
  */
 
@@ -81,7 +85,7 @@
             bindings = <
 &td_q  &kp W  &kp E  &kp R      &kp T    &kp Y       &kp U        &kp I          &kp O        &kp P         &hml LCTRL A  &kp S
 &kp D  &kp F  &kp G  &kp H      &kp J    &kp K       &kp L        &kp SEMICOLON  &kp Z        &kp X         &kp C         &kp V
-&kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH    &lt NAV SQT  &lt NUM TAB  &sk LSHFT  &kp SPACE  &kp BSPC  &mt LGUI RET
+&kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH    &lt NAV BSPC  &sk LSHFT  &lt NUM TAB  &mt LGUI RET  &kp SPACE  &kp SQT
             >;
         };
 
