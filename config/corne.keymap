@@ -83,9 +83,9 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&td_q  &kp W  &kp E  &kp R      &kp T    &kp Y       &kp U        &kp I          &kp O        &kp P         &hml LCTRL A  &kp S
-&kp D  &kp F  &kp G  &kp H      &kp J    &kp K       &kp L        &kp SEMICOLON  &kp Z        &kp X         &kp C         &kp V
-&kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH    &lt NAV BSPC  &sk LSHFT  &lt NUM TAB  &mt LGUI RET  &kp SPACE  &kp SQT
+&td_q  &kp W  &kp E  &kp R      &kp T    &kp Y       &kp U         &kp I          &kp O        &kp P         &hml LCTRL A  &kp S
+&kp D  &kp F  &kp G  &kp H      &kp J    &kp K       &kp L         &kp SEMICOLON  &kp Z        &kp X         &kp C         &kp V
+&kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH    &lt NAV BSPC  &sk LSHFT      &lt NUM TAB  &mt LGUI RET  &kp SPACE     &mt RIGHT_ALT SQT
             >;
         };
 
